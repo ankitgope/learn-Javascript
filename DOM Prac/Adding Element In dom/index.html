@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding Element in DOM</title>
+  </head>
+  <body style="background-color: #212121; color: aliceblue">
+    <div class="parent">
+      <div class="weekdays">Monday</div>
+      <div class="weekdays">Tuesday</div>
+      <div class="weekdays">Wednesday</div>
+      <div class="weekdays">Thursday</div>
+    </div>
+  </body>
+
+  <script>
+    const displayParent = document.querySelector(".parent");
+    // console.log(displayParent);
+    // console.log(displayParent.children)
+    //  console.log(displayParent.children[1])
+    // console.log(displayParent.children[1].innerHTML)
+
+    //printing values Like MONDAY TUESDAY WEDNESDAY from the HTML collection
+    //    for (let i = 0; i< displayParent.children.length;i++) {
+    //     console.log(displayParent.children[i].innerHTML);
+
+    //
+
+    //    displayParent.children[1].style.color='Green'
+    //    console.log(displayParent.firstElementChild)
+    //    console.log(displayParent.lastElementChild);
+
+    const dayOne = document.querySelector(".weekdays");
+    console.log(dayOne);
+    // //getting back to parent
+    console.log(dayOne.parentElement);
+    // //getting the next element Sibling
+    console.log(dayOne.nextElementSibling)
+    // //  Printing the nodes -> the tree structure build behinde the scenes
+    console.log("NODES-->", displayParent.childNodes)
+  </script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit inn DOM</title>
+  </head>
+  <body>
+    <ul class="language">
+      <li>JAvaScript</li>
+    </ul>
+  </body>
+
+  <script>
+    function newLanguage(Language) {
+      // create a element
+      const li = document.createElement("li");
+      //adding data in the element
+      li.innerHTML = `${Language}`;
+      // appending the element with the class
+      document.querySelector(".language").appendChild(li);
+    }
+    newLanguage("Python");
+    //optimized way to adding data used for big project will be appraised
+    function optimizedWay(newLanguage) {
+      const li = document.createElement("li");
+      // const data = document.createTextNode(newLang)
+      // li.appendChild(data)
+      li.appendChild(document.createTextNode(newLanguage));
+      document.querySelector(".language").appendChild(li);
+    }
+    optimizedWay("golang");
+    optimizedWay("again");
+    optimizedWay("removing");
+
+
+    // editing the value type 1
+
+    const newElement1 = document.querySelector("li:nth-child(2)");
+    newElement1.innerHTML = "lullu";
+
+    // type 2
+
+    const newElement2 = document.querySelector("li:first-Child");
+    newElement2.outerHTML = "<li>ANkit</li>";
+
+    //type 3(editing the element after creating an element)
+    const newElement3 = document.querySelector("li:nth-child(4)")
+
+    const creatingAnewelement = document.createElement('li');
+    creatingAnewelement.textContent = "gope" //adding element
+    newElement3.replaceWith(creatingAnewelement)
+
+    //removing  the element-->  (removing)
+
+    const removing = document.querySelector("li:nth-child(5)")
+    removing.remove();
+    
+  </script>
+</html>

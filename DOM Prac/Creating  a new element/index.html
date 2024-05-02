@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const div = document.createElement("div");
+    console.log(div);
+    div.className = "main";
+    div.id = "myId";
+
+    // if we want to add coustome attributes  then we have our methods
+    //set attribute set the attribute in key value pair
+    div.setAttribute("title", "genereted title");
+    //div.setAttribute("className","genereted")
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+    //div.innerText="Ankit Gope"// this type is not prefreeble as not optimized but
+    //below above type can be used as well debatable do easy one
+    const addText = document.createTextNode("Ag");
+    div.appendChild(addText);
+    // upto above this will not show in page this is showing in console
+    //attaching the above
+    document.body.appendChild(div);
+  </script>
+</html>
