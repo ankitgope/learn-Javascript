@@ -20,46 +20,23 @@
    </div>
 </body>
 <script>
-    // document.getElementById('owl').onclick=function(){
-    //     alert("using Dom click ")
-    // }
-    // using event
-    // document.getElementById('owl'),addEventListener("click" ,function(){
-    //     alert("3nd way clicked ")
-    // })
+    document.querySelector('#images').addEventListener('click',function(e){
+        //e.target --> it tels which target it is comming this part <img width="200"...alt.>
 
-    // Event propagation 
-// Event bubling  (run for o/p)
-    // document.getElementById('images').addEventListener('click' ,function(e){
-    //     console.log("clicked inside the ul ")
-    // },false)
-
-    // document.getElementById('owl').addEventListener('click' ,function(e){
-    //     console.log("owl clicked");
-    //      e.stopPropagation()  --> for stoping the propagation
-    // },false)
-
-//Event capturing    
-// document.getElementById('images').addEventListener('click' ,function(e){
-//         console.log("clicked inside the ul ")
-//     },true)
-
-//     document.getElementById('owl').addEventListener('click' ,function(e){
-//         console.log("owl clicked");
+        //e.target.parentNode-->  there are some scenerio where we want to target the parent of the target  (like here we not only have to remove the image but we have remove the whole li tag or else the image will be disappear and bullet point willl be there  )
+        // tis is event spillover --> now if we are clicking near google basically the li part then the whole li is getting removed every images  so we are using e.target.tagName to get the tag name IMG and using if else to abvoid the error 
+        console.log(e.target.tagName)
+        if(e.target.tagName=== 'IMG'){
+            console.log(e.target.id);
+            let removeIt= e.target.parentNode
+            removeIt.remove();
+        }
         
-//     },true)
 
-document.getElementById('google').addEventListener('click' ,function(e){
-        console.log("google clicked");
-        e.preventDefault()
-        e.stopPropagation
-        
+        let removeIt= e.target.parentNode
+         removeIt.remove();
+        // we can doit like this as well a bit confudsing way 
+       // removeIt.parentNode. removeChild(removeIt)
     },false)
-
-
-    
-
-    
-
 </script>
 </html>
